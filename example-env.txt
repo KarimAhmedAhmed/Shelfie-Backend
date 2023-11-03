@@ -1,9 +1,9 @@
 NODE_ENV=dev
 
-DB_Username=karim
+DB_Username=username
 DB_Name=postgres
-DB_Password=karim
+DB_Password=1234
 
-DB_Username_test=karim
-DB_Password_test=karim
-DB_Name_test=test
+DB_Username_test=username
+DB_Name_test=testDB
+DB_Password_test=12345
