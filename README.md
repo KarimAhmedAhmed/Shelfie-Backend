@@ -80,7 +80,7 @@ npm run test:cov
 
 #### About Test Database
 
-We also provide the ability to create a database for test otherwise that for development
+We also provide the ability to create another database for test.
 
 ```bash
 Just add it to the environment file as mentioned in example-env.txt file
