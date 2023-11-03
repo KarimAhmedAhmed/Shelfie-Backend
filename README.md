@@ -16,13 +16,13 @@ To start using and contributing to the project, follow these steps for setting u
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-project.git
+   git clone https://github.com/KarimAhmedAhmed/Shelfie-Backend.git
    ```
 
 2. Install project dependencies:
 
    ```bash
-   cd your-project
+   cd Shelfie-Backend
    npm install
    ```
 
@@ -32,7 +32,7 @@ Explain how to configure your project. This could include setting environment va
 
 ### Project Structure
 
-Describe the structure of your project's codebase. Explain the purpose of major directories and files. This could include directories for routes, controllers, models, and any other significant components.
+Describe the structure of your project's codebase. Explain the purpose of major directories and files. This could include directories for app, controllers, models, and any other significant components.
 
 ### Running the Application
 
@@ -51,17 +51,14 @@ Provide information on how to deploy your application to a production environmen
 List the technologies and frameworks used in the project. You can also specify which features are still in progress.
 
 - Express.js
-- MongoDB
-- TypeScript
+- PostgreSQL
+- JavaScript
 - Jest (for testing)
-- Swagger (In-Progress)
 - Docker (In-Progress)
 
 Certainly! Here's how you can add a "Testing" section to your project's documentation:
 
 ### Testing
-
-Testing is an essential part of the development process to ensure the reliability and functionality of the delivery app. We have provided two commands for running tests and generating test coverage reports.
 
 #### Running Tests
 
@@ -81,5 +78,12 @@ We also provide the ability to generate test coverage reports to gain insights i
 npm run test:cov
 ```
 
-This command will generate detailed coverage reports that you can review to identify areas of your codebase that may require additional testing.
+#### About Test Database
+
+We also provide the ability to create a database for test otherwise that for development
+
+```bash
+Just add it to the environment file as mentioned in example-env.txt file
+```
+
 
