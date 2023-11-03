@@ -1,0 +1,29 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - testdb # Add a dependency on the test database service
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: shelfie
+      POSTGRES_USER: konrad
+      POSTGRES_PASSWORD: mypassword
+    ports:
+      - "5400:5400"
+  testdb:
+    image: postgres:16
+
+    environment:
+      POSTGRES_DB: shelfieTest # Create a test database named "mytestdatabase"
+      POSTGRES_USER: konrad
+      POSTGRES_PASSWORD: mypassword
+    ports:
+      - "5401:5401"
