@@ -1,0 +1,9 @@
+NODE_ENV=dev
+
+DB_Username=karim
+DB_Name=postgres
+DB_Password=karim
+
+DB_Username_test=karim
+DB_Password_test=karim
+DB_Name_test=test
