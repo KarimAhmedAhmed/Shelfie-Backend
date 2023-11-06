@@ -5,14 +5,26 @@ module.exports = {
   addBook: async (req, res) => {
     const { title, author, publicationDate } = req.body;
     if (!title || !author || !publicationDate) {
-      return res.status(400).json({ error: "All fields are required" });
+      return res.status(202).json({ error: "All fields are required" });
     }
 
     try {
-      const newBook = await Book.create({ title, author, publicationDate });
-      res.status(201).json(newBook);
+      //check if the book is exist by the same author
+      const existingbook = await Book.findOne({
+        where: {
+          title: title,
+          author: author,
+        },
+      });
+      if (existingbook) {
+        res
+          .status(202)
+          .json({ error: `${title} is already exist by ${author}` });
+      } else {
+        const newBook = await Book.create({ title, author, publicationDate });
+        res.status(201).json(newBook);
+      }
     } catch (err) {
-      console.error("Error adding book:", err);
       res.status(500).json({ error: "Internal server error" });
     }
   },
@@ -20,7 +32,7 @@ module.exports = {
   searchBooks: async (req, res) => {
     const { title } = req.query;
     if (!title) {
-      return res.status(400).json({ error: "Title parameter is required" });
+      return res.status(202).json({ error: "Title parameter is required" });
     }
 
     try {

@@ -11,7 +11,7 @@ const bookController = require("./controllers/book");
 
 app.use(
   cors({
-    origin: "http://localhost:4000",
+    origin: "*",
     methods: "GET,POST",
     optionsSuccessStatus: 201,
   })

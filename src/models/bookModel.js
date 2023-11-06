@@ -11,7 +11,7 @@ const Book = sequelize.define("Book", {
     allowNull: false,
   },
   publicationDate: {
-    type: Sequelize.STRING,
+    type: Sequelize.DATE,
     allowNull: false,
   },
 });
